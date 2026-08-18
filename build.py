@@ -9,8 +9,10 @@ from datetime import date
 ROOT = Path(__file__).resolve().parent
 TODAY = date.today().isoformat()
 SITE_NAME = "Peoria Chimney Sweep"
-DOMAIN = "https://chimneysweeppeoriail.com"  # primary target domain
-# GitHub Pages URL will also work; canonical can be updated after domain connect
+# Live on GitHub Pages until custom domain is connected.
+# Custom domain candidate: https://chimneysweeppeoriail.com
+DOMAIN = "https://pitangu.github.io/peoria-chimney-sweep-poc"
+BASE = "/peoria-chimney-sweep-poc"  # "" if hosting at domain root
 PHONE_DISPLAY = "(309) 555-0148"
 PHONE_TEL = "+13095550148"
 BRAND = "Peoria Chimney Sweep"
@@ -19,15 +21,24 @@ STATE = "IL"
 GEO_REGION = "US-IL"
 LAT, LNG = "40.6936", "-89.5890"
 
+def u(path: str) -> str:
+    """Prefix site paths for project-page or root hosting."""
+    if not path.startswith("/"):
+        path = "/" + path
+    if path == "/":
+        return BASE + "/" if BASE else "/"
+    return BASE + path
+
+
 NAV = [
-    ("Home", "/"),
-    ("Chimney Sweep", "/services/chimney-sweep/"),
-    ("Chimney Inspection", "/services/chimney-inspection/"),
-    ("Chimney Repair", "/services/chimney-repair/"),
-    ("Dryer Vent Cleaning", "/services/dryer-vent-cleaning/"),
-    ("Service Areas", "/areas/"),
-    ("Blog", "/blog/"),
-    ("Contact", "/contact/"),
+    ("Home", u("/")),
+    ("Chimney Sweep", u("/services/chimney-sweep/")),
+    ("Chimney Inspection", u("/services/chimney-inspection/")),
+    ("Chimney Repair", u("/services/chimney-repair/")),
+    ("Dryer Vent Cleaning", u("/services/dryer-vent-cleaning/")),
+    ("Service Areas", u("/areas/")),
+    ("Blog", u("/blog/")),
+    ("Contact", u("/contact/")),
 ]
 
 AREAS = [
@@ -322,6 +333,45 @@ def lead_form(compact: bool = False) -> str:
 
 def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> str:
     canonical = DOMAIN.rstrip("/") + (path if path != "/" else "/")
+    def fix(html: str) -> str:
+        """Rewrite root-absolute URLs for GitHub project Pages base path."""
+        if not BASE:
+            return html
+        out = []
+        i = 0
+        while True:
+            # find href=" or src="
+            j1 = html.find('href="', i)
+            j2 = html.find('src="', i)
+            candidates = [j for j in (j1, j2) if j >= 0]
+            if not candidates:
+                out.append(html[i:])
+                break
+            j = min(candidates)
+            out.append(html[i:j])
+            # attribute
+            if html.startswith('href="', j):
+                attr = 'href="'
+            else:
+                attr = 'src="'
+            k = j + len(attr)
+            end = html.find('"', k)
+            url = html[k:end]
+            if url.startswith('/') and not url.startswith('//') and not url.startswith(BASE + '/') and url != BASE and not url.startswith(BASE + '?'):
+                if url == '/':
+                    url = BASE + '/'
+                else:
+                    url = BASE + url
+            out.append(attr + url + '"')
+            i = end + 1
+        return ''.join(out)
+        # avoid double-prefixing
+        html = html.replace(BASE + BASE, BASE)
+        for attr in ("href", "src"):
+            html = html.replace(f'{attr}="/', f'{attr}="{BASE}/')
+            # fix accidental double base
+            html = html.replace(f'{attr}="{BASE}{BASE}/', f'{attr}="{BASE}/')
+        return html
     nav_html = "\n".join(
         f'<li><a href="{href}">{label}</a></li>' for label, href in NAV
     )
@@ -331,7 +381,7 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
     areas_footer = "\n".join(
         f'<li><a href="/areas/{a[0]}/">{a[1]}, IL</a></li>' for a in AREAS[:6]
     )
-    return f"""<!DOCTYPE html>
+    return fix(f"""<!DOCTYPE html>
 <html lang="en-US">
 <head>
   <meta charset="utf-8">
@@ -423,7 +473,7 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
   <script src="/js/main.js" defer></script>
 </body>
 </html>
-"""
+""")
 
 
 def write(path: str, html: str) -> None:
