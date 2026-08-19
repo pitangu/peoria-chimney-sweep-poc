@@ -12,11 +12,11 @@
   --ok: #1f7a4c;
   --shadow: 0 10px 30px rgba(15, 24, 41, 0.12);
   --radius: 12px;
-    --max: 1120px;
-    /* Side breathing room: scales up on wide screens */
-    --gutter: clamp(1.25rem, 5vw, 2.75rem);
-    --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
-  }
+  --max: 1120px;
+  /* Side breathing room: scales up on wide screens */
+  --gutter: clamp(1.25rem, 5vw, 2.75rem);
+  --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
+}
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
