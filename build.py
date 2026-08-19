@@ -920,38 +920,39 @@ def build_home() -> None:
 </article>
 """
     body = f"""
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <span class="eyebrow">Serving the Peoria area</span>
-      <h1>Chimney Sweep in Peoria, IL</h1>
-      <p class="lede">Most calls we get are one of three things: the fireplace smells, it's been years since the last cleaning, or someone is buying or selling a house and needs the chimney checked. Whatever yours is, call and we'll tell you straight what it needs and what it doesn't.</p>
-      <ul class="hero-points">
-        <li>We work clean: floors covered, soot vacuumed</li>
-        <li>You get a clear report of what we found</li>
-        <li>Wood, gas, and pellet systems</li>
-        <li>Often same-week openings in season</li>
-      </ul>
-      <div class="hero-ctas">
-        <a class="btn btn-primary btn-lg" data-phone-link href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
-        <a class="btn btn-secondary btn-lg" href="#quote">Request a Callback</a>
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <img class="hero-bg-img" src="/images/hero-service-van.jpg" width="1672" height="941" alt="" loading="eager" decoding="async" fetchpriority="high">
+        <div class="hero-overlay"></div>
       </div>
-      <div class="trust-row">
-        <span><strong>Yearly</strong> safety checks</span>
-        <span><strong>Wood, gas, pellet</strong></span>
-        <span><strong>Peoria metro</strong></span>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow">Serving the Peoria area</span>
+          <h1>Chimney Sweep in Peoria, IL</h1>
+          <p class="lede">Most calls we get are one of three things: the fireplace smells, it's been years since the last cleaning, or someone is buying or selling a house and needs the chimney checked. Whatever yours is, call and we'll tell you straight what it needs and what it doesn't.</p>
+          <ul class="hero-points">
+            <li>We work clean: floors covered, soot vacuumed</li>
+            <li>You get a clear report of what we found</li>
+            <li>Wood, gas, and pellet systems</li>
+            <li>Often same-week openings in season</li>
+          </ul>
+          <div class="hero-ctas">
+            <a class="btn btn-primary btn-lg" data-phone-link href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
+            <a class="btn btn-outline btn-lg" href="#quote">Request a Callback</a>
+          </div>
+          <div class="trust-row">
+            <span><strong>Yearly</strong> safety checks</span>
+            <span><strong>Wood, gas, pellet</strong></span>
+            <span><strong>Peoria metro</strong></span>
+          </div>
+        </div>
+        <div class="quote-card hero-form" id="quote">
+          <h2>Request a callback</h2>
+          <p class="sub">Leave your number. We usually call back the same business day.</p>
+          {lead_form(compact=True)}
+        </div>
       </div>
-      <figure class="hero-photo">
-        <img src="/images/home-fireplace.jpg" width="1100" height="733" alt="Home fireplace with brick surround" loading="eager" decoding="async">
-      </figure>
-    </div>
-    <div class="quote-card hero-form" id="quote">
-      <h2>Request a callback</h2>
-      <p class="sub">Leave your number. We usually call back the same business day.</p>
-      {lead_form(compact=True)}
-    </div>
-  </div>
-</section>
+    </section>
 
 <section class="trust-strip">
   <div class="container trust-strip-grid">
