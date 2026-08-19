@@ -4,3 +4,7 @@ Thumbs.db
 .idea/
 .vscode/
 __pycache__/
+
+.pydeps/
+_parts/
+build.py.bak
