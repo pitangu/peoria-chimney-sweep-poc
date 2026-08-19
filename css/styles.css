@@ -346,11 +346,13 @@ section { padding: 3.5rem 0; }
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: #f3e4e1;
-  color: var(--brick);
+  background: var(--navy);
+  color: #fff;
   display: grid;
   place-items: center;
-  font-size: 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
   margin-bottom: 0.85rem;
 }
 
