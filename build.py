@@ -57,82 +57,120 @@ AREAS = [
 SERVICES = [
     {
         "slug": "chimney-sweep",
-        "name": "Chimney Sweep",
-        "title": "Chimney Sweep Peoria IL | Professional Chimney Cleaning",
-        "h1": "Chimney Sweep in Peoria, IL",
-        "meta": "Professional chimney sweep and chimney cleaning in Peoria, IL. Creosote removal, mess-free service, same-week scheduling. Call " + PHONE_DISPLAY + ".",
-        "icon": "🧹",
-        "summary": "Mess-free chimney cleaning that removes creosote, soot, and debris so your Peoria fireplace vents safely.",
-        "body_extra": """
-<h2>Why Peoria homeowners schedule an annual chimney sweep</h2>
-<p>Central Illinois winters mean heavy fireplace use. Every wood fire leaves behind creosote — a flammable byproduct that builds up inside the flue. The National Fire Protection Association (NFPA 211) recommends chimneys be inspected at least once a year and cleaned when needed. A professional chimney sweep in Peoria, IL reduces chimney-fire risk, improves draft, and keeps smoke where it belongs.</p>
-<h2>What our chimney cleaning includes</h2>
-<ul>
-<li>Protective floor coverings and HEPA-filtered vacuum setup</li>
-<li>Brushing of flue, smoke chamber, and firebox</li>
-<li>Removal of soot, creosote, and loose debris</li>
-<li>Visual check for obvious damage, blockages, or animal nests</li>
-<li>Before/after notes so you know what we found</li>
-</ul>
-<h2>Signs you need a chimney sweep now</h2>
-<ul>
-<li>It has been more than 12 months since your last cleaning</li>
-<li>Smoke spills into the room when you burn</li>
-<li>Strong creosote or musty odor, especially after rain</li>
-<li>White staining (efflorescence) on exterior brick</li>
-<li>Animals or birds nesting near the flue opening</li>
-</ul>
-<div class="callout"><strong>Local tip:</strong> Peoria’s freeze-thaw cycles crack crowns and loosen mortar. Pair your sweep with a quick exterior look before the first hard freeze.</div>
-""",
-    },
+                "name": "Chimney Sweep",
+                "title": "Chimney Sweep Peoria IL | Chimney Cleaning Near You",
+                "h1": "Chimney Sweep & Cleaning in Peoria, IL",
+                "meta": "Chimney sweep and chimney cleaning in Peoria, IL. Creosote removal, mess-conscious service, NFPA-minded inspections. Call " + PHONE_DISPLAY + ".",
+                "icon": "🧹",
+                "summary": "Mess-conscious chimney cleaning that removes creosote, soot, and debris so your Peoria fireplace vents safely.",
+                "body_extra": """
+        <h2>Why Peoria homeowners schedule an annual chimney sweep</h2>
+        <p>Central Illinois winters mean heavy fireplace use. Every wood fire leaves behind creosote — a flammable byproduct that builds up inside the flue. Industry guidance (NFPA 211) recommends chimneys be inspected at least once a year and cleaned when needed. A professional chimney sweep in Peoria, IL reduces chimney-fire risk, improves draft, and keeps smoke where it belongs.</p>
+        <h2>What’s included in a standard sweep</h2>
+        <ul>
+        <li>Indoor floor protection and careful setup before work starts</li>
+        <li>HEPA-style vacuum containment to limit soot in living spaces</li>
+        <li>Brushing of flue, smoke chamber, and firebox as accessible</li>
+        <li>Removal of soot, creosote, and loose debris</li>
+        <li>Visual check for obvious damage, blockages, or animal nesting</li>
+        <li>Plain-English notes on what we found and any recommended next steps</li>
+        </ul>
+        <h2>Our process on service day</h2>
+        <ol class="process-list">
+        <li><strong>Confirm scope</strong> — wood vs gas, last service date, and symptoms (smoke, odor, slow draft).</li>
+        <li><strong>Protect the home</strong> — cover work paths and set up vacuum containment.</li>
+        <li><strong>Clean the system</strong> — brush and remove buildup from accessible flue paths.</li>
+        <li><strong>Review findings</strong> — walk through results and only recommend repairs that matter for safety or function.</li>
+        </ol>
+        <h2>Signs you need a chimney sweep now</h2>
+        <ul>
+        <li>It has been more than 12 months since your last cleaning</li>
+        <li>Smoke spills into the room when you burn</li>
+        <li>Strong creosote or musty odor, especially after rain</li>
+        <li>White staining (efflorescence) on exterior brick</li>
+        <li>Animals or birds nesting near the flue opening</li>
+        </ul>
+        <div class="callout"><strong>Local tip:</strong> Peoria’s freeze-thaw cycles crack crowns and loosen mortar. Pair your sweep with a quick exterior look before the first hard freeze.</div>
+        <h2>Chimney sweep FAQs — Peoria, IL</h2>
+        <div class="faq">
+        <details><summary>How long does a chimney cleaning take?</summary><p>Many single-flue residential sweeps take about 45–90 minutes on site. Heavy creosote, multiple flues, or difficult access can take longer.</p></details>
+        <details><summary>Will there be soot in my house?</summary><p>Technicians use floor protection and vacuum containment. Living spaces should stay clean; you may notice temporary equipment in the work area.</p></details>
+        <details><summary>Do gas fireplaces need sweeping?</summary><p>Gas systems usually produce less creosote than wood, but they still need periodic inspection for venting, corrosion, animals, and safety.</p></details>
+        </div>
+        """,
+            },
     {
         "slug": "chimney-inspection",
-        "name": "Chimney Inspection",
-        "title": "Chimney Inspection Peoria IL | Level 1 & 2 Inspections",
-        "h1": "Chimney Inspection in Peoria, IL",
-        "meta": "NFPA-style chimney inspections in Peoria, IL. Level 1 and Level 2 evaluations with clear photo notes. Schedule at " + PHONE_DISPLAY + ".",
-        "icon": "🔎",
-        "summary": "Clear, photo-backed chimney inspections so you know if your system is safe to burn.",
-        "body_extra": """
-<h2>When you need a chimney inspection</h2>
-<p>Buyers, sellers, and careful homeowners in the Peoria metro use chimney inspections to catch hidden problems before they become expensive repairs — or safety hazards. We follow industry inspection levels so the scope matches your situation.</p>
-<h2>Level 1 vs Level 2</h2>
-<ul>
-<li><strong>Level 1:</strong> Routine annual check when nothing has changed — readily accessible portions of the chimney and appliance.</li>
-<li><strong>Level 2:</strong> After a home sale, weather event, or system change. May include camera scanning of flues and more of the accessible chimney structure.</li>
-</ul>
-<h2>What you receive</h2>
-<ul>
-<li>Plain-English summary of findings</li>
-<li>Photos of problem areas when present</li>
-<li>Prioritized recommendations (safety first, then maintenance)</li>
-<li>No pressure upsells — rent the lead flow model means results speak for themselves</li>
-</ul>
-""",
-    },
+                "name": "Chimney Inspection",
+                "title": "Chimney Inspection Peoria IL | Level 1 & Level 2",
+                "h1": "Chimney Inspection in Peoria, IL",
+                "meta": "Chimney inspection in Peoria, IL. Level 1 & Level 2 style evaluations with clear findings for homeowners and home sales. Call " + PHONE_DISPLAY + ".",
+                "icon": "🔎",
+                "summary": "Clear chimney inspections so you know if your system is safe to burn — including home-sale situations.",
+                "body_extra": """
+        <h2>When you need a chimney inspection in Peoria</h2>
+        <p>Buyers, sellers, and careful homeowners across the Peoria metro use chimney inspections to catch hidden problems before they become expensive repairs — or safety hazards. Scope should match your situation, not a one-size sales pitch.</p>
+        <h2>Level 1 vs Level 2 (plain English)</h2>
+        <ul>
+        <li><strong>Level 1:</strong> Routine annual check when nothing major has changed — readily accessible portions of the chimney and appliance.</li>
+        <li><strong>Level 2:</strong> Common after a home sale, weather event, or system change. Often includes more of the accessible chimney structure and may use camera scanning of flues when needed.</li>
+        </ul>
+        <h2>What’s included</h2>
+        <ul>
+        <li>Visual evaluation of accessible chimney and venting components</li>
+        <li>Notes on creosote, blockages, moisture clues, and obvious structural concerns</li>
+        <li>Photos of problem areas when present</li>
+        <li>Prioritized recommendations: safety first, then maintenance</li>
+        </ul>
+        <h2>Inspection process</h2>
+        <ol class="process-list">
+        <li><strong>Intake</strong> — home sale, annual check, smoke issues, or storm damage?</li>
+        <li><strong>On-site evaluation</strong> — accessible interior and exterior components as the level requires.</li>
+        <li><strong>Findings review</strong> — clear summary of what is fine, what to watch, and what needs repair.</li>
+        </ol>
+        <div class="callout"><strong>Honest note:</strong> We focus on clear findings and next steps. Credentials and on-site methods are those of the servicing technician assigned to your job.</div>
+        <h2>Chimney inspection FAQs</h2>
+        <div class="faq">
+        <details><summary>Do I need an inspection before selling my Peoria home?</summary><p>Many buyers and inspectors flag fireplace/chimney condition. A Level 2-style inspection is commonly requested around real-estate transactions.</p></details>
+        <details><summary>Is camera scanning always included?</summary><p>Not always. Camera use depends on access, inspection level, and whether interior flue conditions need a closer look.</p></details>
+        <details><summary>What if repairs are recommended?</summary><p>You get prioritized options. Safety items come first; cosmetic or longer-term maintenance is labeled clearly.</p></details>
+        </div>
+        """,
+            },
     {
         "slug": "chimney-repair",
-        "name": "Chimney Repair",
-        "title": "Chimney Repair Peoria IL | Caps, Crowns & Masonry",
-        "h1": "Chimney Repair in Peoria, IL",
-        "meta": "Chimney repair in Peoria, IL: caps, crowns, tuckpointing, flashing, and waterproofing. Protect your home from water and freeze damage. Call " + PHONE_DISPLAY + ".",
-        "icon": "🧱",
-        "summary": "Caps, crowns, tuckpointing, and waterproofing that stop water before it wrecks the flue.",
-        "body_extra": """
-<h2>Common chimney repairs in Central Illinois</h2>
-<p>Water is the enemy of masonry. Rain, snow, and freeze-thaw cycles around Peoria open mortar joints, crack crowns, and rust dampers. Small repairs now prevent full rebuilds later.</p>
-<ul>
-<li>Chimney cap installation (animals, rain, embers)</li>
-<li>Crown repair and rebuild</li>
-<li>Tuckpointing and brick replacement</li>
-<li>Flashing repair at the roof line</li>
-<li>Breathable masonry waterproofing</li>
-<li>Damper repair or top-sealing dampers</li>
-</ul>
-<h2>Why repair beats “wait and see”</h2>
-<p>Moisture inside the flue damages liners and can migrate into attics and living spaces. If your sweep or inspection flags masonry issues, fixing them before winter is usually the lowest-cost path.</p>
-""",
-    },
+                "name": "Chimney Repair",
+                "title": "Chimney Repair Peoria IL | Caps, Crowns & Masonry",
+                "h1": "Chimney Repair in Peoria, IL",
+                "meta": "Chimney repair in Peoria, IL: caps, crowns, tuckpointing, flashing, and waterproofing for freeze-thaw damage. Call " + PHONE_DISPLAY + ".",
+                "icon": "🧱",
+                "summary": "Caps, crowns, tuckpointing, and waterproofing that stop water before it wrecks the flue.",
+                "body_extra": """
+        <h2>Common chimney repairs in Central Illinois</h2>
+        <p>Water is the enemy of masonry. Rain, snow, and freeze-thaw cycles around Peoria open mortar joints, crack crowns, and rust dampers. Small repairs now often prevent full rebuilds later.</p>
+        <ul>
+        <li>Chimney cap installation (animals, rain, embers)</li>
+        <li>Crown repair and rebuild</li>
+        <li>Tuckpointing and brick replacement</li>
+        <li>Flashing repair at the roof line</li>
+        <li>Breathable masonry waterproofing</li>
+        <li>Damper repair or top-sealing dampers</li>
+        </ul>
+        <h2>How repair jobs typically run</h2>
+        <ol class="process-list">
+        <li><strong>Identify the failure</strong> — leak path, crown cracks, missing cap, bad flashing, or deteriorated mortar.</li>
+        <li><strong>Scope the fix</strong> — safety and water intrusion first; optional upgrades labeled clearly.</li>
+        <li><strong>Complete the work</strong> — materials matched to the job; cleanup when finished.</li>
+        <li><strong>Prevention tips</strong> — what to watch next season so the same issue doesn’t return quickly.</li>
+        </ol>
+        <h2>Why repair beats “wait and see”</h2>
+        <p>Moisture inside the flue damages liners and can migrate into attics and living spaces. If a sweep or inspection flags masonry issues, fixing them before winter is usually the lower-cost path.</p>
+        <div class="faq">
+        <details><summary>Can you repair just the cap?</summary><p>Often yes. A quality cap is one of the highest-ROI small repairs for keeping water and animals out.</p></details>
+        <details><summary>Do you handle full rebuilds?</summary><p>Scope depends on the technician and job complexity. Severe structural work may require specialized masonry scheduling.</p></details>
+        </div>
+        """,
+            },
     {
         "slug": "chimney-cap-installation",
         "name": "Chimney Cap Installation",
@@ -413,9 +451,9 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
   <header class="site-header">
       <div class="container header-inner">
         <a class="logo" href="/" aria-label="{BRAND} home">
-          <span class="logo-mark" aria-hidden="true">⌂</span>
-          <div>{BRAND}<span>Chimney Cleaning · Peoria, IL</span></div>
-        </a>
+                  <img class="logo-mark" src="/images/logo.svg" width="42" height="42" alt="" decoding="async">
+                  <div>{BRAND}<span>Chimney Sweep · Peoria, IL</span></div>
+                </a>
         <div class="header-actions">
           <a class="btn btn-primary header-call" data-phone-link="text" href="tel:{PHONE_TEL}">Call Now</a>
           <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
@@ -594,7 +632,7 @@ def build_home() -> None:
     faqs = [
         (
             "How much does a chimney sweep cost in Peoria, IL?",
-            "Most standard residential chimney cleanings in the Peoria area fall in a few-hundred-dollar range depending on flue condition, accessibility, and whether an inspection or repairs are needed. Call for a straightforward quote.",
+            "Most standard residential chimney cleanings in the Peoria area fall in a few-hundred-dollar range depending on flue condition, accessibility, and whether an inspection or repairs are needed. Call for a straightforward quote — no surprise packages.",
         ),
         (
             "How long does chimney cleaning take?",
@@ -605,8 +643,16 @@ def build_home() -> None:
             "Yes. Gas systems produce less creosote than wood but still need inspections for proper venting, animal blockages, corrosion, and safety.",
         ),
         (
+            "Will the technician make a mess in my home?",
+            "Service is set up to protect floors and contain soot with vacuum equipment. You should expect a professional work area, not soot tracked through the house.",
+        ),
+        (
             "Which cities do you serve?",
             "Peoria, East Peoria, Pekin, Washington, Morton, Dunlap, Metamora, Peoria Heights, Germantown Hills, Chillicothe, and nearby Central Illinois communities.",
+        ),
+        (
+            "What happens after I call?",
+            "We confirm your city, fireplace type, and what you need. Then we schedule a visit and review findings in plain English when the job is done.",
         ),
     ]
     faq_html = "\n".join(
@@ -628,13 +674,13 @@ def build_home() -> None:
 <section class="hero">
   <div class="container hero-grid">
     <div>
-      <span class="eyebrow">Peoria, IL · Chimney & Dryer Vent Pros</span>
-      <h1>Chimney Sweep in Peoria, IL — Cleaning, Inspection & Repair</h1>
-      <p class="lede">Keep your fireplace safe for Central Illinois winters. Professional chimney cleaning, creosote removal, inspections, caps, and dryer vent cleaning for Peoria and nearby towns.</p>
+      <span class="eyebrow">Peoria, IL chimney sweep · metro-wide service</span>
+      <h1>Chimney Sweep Peoria IL — Cleaning, Inspection & Repair</h1>
+      <p class="lede">Looking for a chimney sweep in Peoria, IL? Get mess-conscious chimney cleaning, creosote removal, inspections, caps, and dryer vent cleaning for Peoria and nearby Central Illinois towns.</p>
       <ul class="hero-points">
-        <li>Mess-conscious indoor protection & HEPA vacuum setup</li>
+        <li>Peoria-first service pages built for local search intent</li>
+        <li>Indoor protection & vacuum containment on cleaning jobs</li>
         <li>Clear findings — safety first, no jargon runaround</li>
-        <li>Serving Peoria, East Peoria, Pekin, Washington, Morton & more</li>
         <li>Same-week appointments often available in season</li>
       </ul>
       <div class="hero-ctas">
@@ -644,7 +690,7 @@ def build_home() -> None:
       <div class="trust-row">
         <span><strong>NFPA-minded</strong> annual safety focus</span>
         <span><strong>Wood & gas</strong> systems</span>
-        <span><strong>Local</strong> Central Illinois routing</span>
+        <span><strong>Peoria metro</strong> routing</span>
       </div>
     </div>
     <div class="quote-card" id="quote">
@@ -655,10 +701,31 @@ def build_home() -> None:
   </div>
 </section>
 
+<section class="trust-strip">
+  <div class="container trust-strip-grid">
+    <div class="trust-item">
+      <strong>Call-first convenience</strong>
+      <p>Phone and form CTAs on every page — built for homeowners who want help this week, not a brochure tour.</p>
+    </div>
+    <div class="trust-item">
+      <strong>What we actually do</strong>
+      <p>Sweep, inspect, repair scoping, caps, creosote help, and dryer vents — the jobs people search for in Peoria.</p>
+    </div>
+    <div class="trust-item">
+      <strong>Honest process</strong>
+      <p>Protect the home, clean or evaluate, then explain findings in plain English. No fake “since 1987” storyline.</p>
+    </div>
+    <div class="trust-item">
+      <strong>Local coverage</strong>
+      <p>Peoria plus East Peoria, Pekin, Washington, Morton, Dunlap, and nearby towns across the metro.</p>
+    </div>
+  </div>
+</section>
+
 <section>
   <div class="container">
     <div class="section-head">
-      <h2>Chimney services built for Peoria homes</h2>
+      <h2>Chimney services for Peoria, IL homes</h2>
       <p>From a quick annual sweep to caps, crowns, and dryer vents — one place for the jobs homeowners actually search for.</p>
     </div>
     <div class="grid-3">{cards}</div>
@@ -673,22 +740,22 @@ def build_home() -> None:
         <p>Simple on purpose — so you get help without a hard sell.</p>
       </div>
       <div class="steps">
-        <div class="step"><div class="step-num">1</div><div><h3>Call or request a callback</h3><p>Share your city, fireplace type, and what you’re seeing (smoke, odor, due for annual service, buyer inspection, etc.).</p></div></div>
-        <div class="step"><div class="step-num">2</div><div><h3>We schedule a visit</h3><p>A technician arrives with floor protection and pro tools, then cleans and/or inspects as agreed.</p></div></div>
-        <div class="step"><div class="step-num">3</div><div><h3>You get clear next steps</h3><p>If everything looks good, you’re set for the season. If repairs are needed, you get plain-English options.</p></div></div>
+        <div class="step"><div class="step-num">1</div><div><h3>Call or request a callback</h3><p>Share your city, fireplace type (wood or gas), and what you’re seeing — smoke, odor, annual due date, or a home-sale inspection.</p></div></div>
+        <div class="step"><div class="step-num">2</div><div><h3>We schedule the visit</h3><p>A technician arrives with floor protection and pro tools, then cleans and/or inspects as agreed.</p></div></div>
+        <div class="step"><div class="step-num">3</div><div><h3>You get clear next steps</h3><p>If everything looks good, you’re set for the season. If repairs are needed, you get plain-English options ranked by priority.</p></div></div>
       </div>
     </div>
     <div>
       <div class="section-head">
-        <h2>Why annual chimney care matters here</h2>
-        <p>Peoria winters are long. Creosote, moisture, and freeze-thaw damage don’t take the season off.</p>
+        <h2>Why annual chimney care matters in Peoria</h2>
+        <p>Central Illinois winters are long. Creosote, moisture, and freeze-thaw damage don’t take the season off.</p>
       </div>
       <ul class="checklist">
         <li>Chimney fires often start with neglected creosote</li>
-        <li>Blocked flues can push carbon monoxide risk indoors</li>
+        <li>Blocked flues can push dangerous gases indoors</li>
         <li>Open chimneys attract birds and raccoons</li>
         <li>Cracked crowns let water destroy masonry from inside</li>
-        <li>Home sales frequently require Level 2 inspections</li>
+        <li>Home sales frequently trigger Level 2-style inspections</li>
       </ul>
       <p style="margin-top:1.25rem"><a class="btn btn-primary" href="/services/chimney-sweep/">See chimney sweep details</a></p>
     </div>
@@ -698,25 +765,48 @@ def build_home() -> None:
 <section class="bg-cream">
   <div class="container">
     <div class="section-head">
+      <h2>Standards we work by (no fluff)</h2>
+      <p>We use industry language homeowners already trust — without inventing certifications we don’t hold as a brand.</p>
+    </div>
+    <div class="grid-3">
+      <article class="card">
+        <h3>NFPA-minded cadence</h3>
+        <p>Annual inspection guidance is the baseline. Cleaning frequency depends on fuel, burn habits, and what the tech finds.</p>
+      </article>
+      <article class="card">
+        <h3>Mess-conscious cleaning</h3>
+        <p>Floor protection and vacuum containment are part of a proper sweep — not an optional upsell.</p>
+      </article>
+      <article class="card">
+        <h3>Findings you can use</h3>
+        <p>Safety items first. Maintenance next. Optional upgrades labeled clearly so you can decide without pressure.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
       <h2>Proudly serving the Peoria metro</h2>
-      <p>Neighborhood-level pages help you confirm we cover your town — and help locals find the right service faster.</p>
+      <p>City pages help you confirm coverage — and help locals find the right service faster than a generic “surrounding areas” list.</p>
     </div>
     <div class="area-pills">{area_pills}</div>
   </div>
 </section>
 
-<section>
+<section class="bg-cream">
   <div class="container grid-2">
     <div>
       <div class="section-head">
-        <h2>What homeowners ask us</h2>
+        <h2>What Peoria homeowners ask</h2>
         <p>Straight answers before you book.</p>
       </div>
       <div class="faq">{faq_html}</div>
     </div>
     <div class="card">
       <h3>Ready when you are</h3>
-      <p>Whether you need a standard chimney cleaning in Peoria or a full inspection before listing your home, start with a quick call or form.</p>
+      <p>Whether you need chimney cleaning in Peoria or an inspection before listing your home, start with a quick call or form.</p>
       {lead_form()}
     </div>
   </div>
@@ -725,7 +815,7 @@ def build_home() -> None:
     extra = json_ld_home() + json_ld_faq(faqs)
     write("index.html", base(
         "Chimney Sweep Peoria IL | Chimney Cleaning & Inspection",
-        f"Professional chimney sweep and chimney cleaning in Peoria, IL. Creosote removal, inspections, repairs, and dryer vent cleaning. Call {PHONE_DISPLAY}.",
+        f"Chimney sweep and chimney cleaning in Peoria, IL. Creosote removal, inspections, repairs, and dryer vent cleaning for the Peoria metro. Call {PHONE_DISPLAY}.",
         "/",
         body,
         extra,

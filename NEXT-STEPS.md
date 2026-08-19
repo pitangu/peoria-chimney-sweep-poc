@@ -8,6 +8,7 @@
 - [x] Niche + city chosen (chimney sweep / Peoria IL metro)
 - [x] Full static site with services, cities, blog, schema, sitemap
 - [x] Published on GitHub Pages
+- [x] Mobile-friendly: hamburger nav + sticky Call/Callback bar
 
 ## Do this week (ranking requires off-page too)
 1. **Buy domain** (candidate: `chimneysweeppeoriail.com` — re-check registrar)
