@@ -641,6 +641,7 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
   <meta name="twitter:image" content="{OG_IMAGE}">
   <link rel="stylesheet" href="/css/styles.css?v=20260819b">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <meta name="google-site-verification" content="_dAF_VWUbVx4oglhNYuZq197uV76lkQ0j6VFS8Ml4dg">
   {extra_head}
 </head>
 <body>
