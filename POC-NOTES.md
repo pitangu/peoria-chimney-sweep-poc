@@ -1,4 +1,4 @@
-# POC selection notes — 2026-08-18
+# POC selection notes — 2026-08-19
 
 ## Chosen: Chimney Sweep · Peoria, IL
 

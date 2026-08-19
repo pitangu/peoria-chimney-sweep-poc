@@ -60,6 +60,70 @@ a:hover { text-decoration: underline; }
   justify-content: space-between;
   gap: 1rem;
   padding: 0.85rem 0;
+  flex-wrap: wrap;
+}
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-left: auto;
+}
+.header-call { display: none; }
+.nav-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid var(--sand);
+  background: var(--cream);
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+.nav-toggle-bars,
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  position: relative;
+  transition: transform .2s ease, opacity .2s ease;
+}
+.nav-toggle-bars::before,
+.nav-toggle-bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+.nav-toggle-bars::before { top: -6px; }
+.nav-toggle-bars::after { top: 6px; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars { background: transparent; }
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.nav-toggle[aria-expanded="true"] .nav-toggle-bars::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+.primary-nav {
+  display: flex;
+  align-items: center;
+}
+.primary-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.mobile-call-bar {
+  display: none;
 }
 .logo {
   display: flex;
@@ -84,22 +148,13 @@ a:hover { text-decoration: underline; }
 }
 .logo span { display: block; font-size: 0.78rem; font-weight: 600; color: var(--muted); letter-spacing: 0; }
 
-nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 1.1rem;
-  flex-wrap: wrap;
-  align-items: center;
-}
-nav a {
+.primary-nav a {
   color: var(--navy);
   font-weight: 600;
   font-size: 0.95rem;
   text-decoration: none;
 }
-nav a:hover { color: var(--brick); }
+.primary-nav a:hover { color: var(--brick); }
 
 .btn {
   display: inline-flex;
@@ -507,10 +562,65 @@ section { padding: 3.5rem 0; }
   .hero-grid, .content-wrap, .footer-grid, .grid-3, .grid-2, .form-row.two {
     grid-template-columns: 1fr;
   }
-  nav ul { display: none; }
-  .mobile-nav-note { display: block; }
+  .header-inner { position: relative; }
+  .header-call { display: inline-flex; padding: 0.65rem 1rem; font-size: 0.92rem; }
+  .nav-toggle { display: inline-flex; }
+  .primary-nav {
+    display: none;
+    width: 100%;
+    order: 3;
+    background: var(--white);
+    border: 1px solid var(--sand);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 0.5rem;
+  }
+  .primary-nav.is-open { display: block; }
+  .primary-nav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+  .primary-nav li a {
+    display: block;
+    padding: 0.85rem 0.9rem;
+    border-radius: 8px;
+  }
+  .primary-nav li a:hover { background: var(--cream); }
+  .primary-nav .nav-call-item { display: none; }
   .sidebar-sticky { position: static; }
+  .mobile-call-bar {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 0.55rem;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 60;
+    padding: 0.65rem 0.85rem calc(0.65rem + env(safe-area-inset-bottom, 0px));
+    background: rgba(15, 24, 41, 0.96);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 -8px 24px rgba(15, 24, 41, 0.25);
+  }
+  .mobile-call-bar .btn {
+    min-height: 48px;
+    font-size: 0.95rem;
+    padding: 0.75rem 0.6rem;
+  }
+  .mobile-call-bar .btn-secondary {
+    border-color: rgba(255,255,255,0.55);
+    color: #fff;
+    background: transparent;
+  }
+  body {
+    padding-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
+  }
+  .topbar { font-size: 0.82rem; }
+  .topbar .container > span:first-child { display: none; }
 }
 @media (min-width: 901px) {
-  .mobile-nav-note { display: none; }
+  .header-actions { display: none; }
+  .mobile-call-bar { display: none !important; }
+  .primary-nav .nav-call-item { display: list-item; }
 }

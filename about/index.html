@@ -28,14 +28,20 @@
     </div>
   </div>
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="/peoria-chimney-sweep-poc/" aria-label="Peoria Chimney Sweep home">
-        <span class="logo-mark" aria-hidden="true">⌂</span>
-        <div>Peoria Chimney Sweep<span>Chimney Cleaning · Peoria, IL</span></div>
-      </a>
-      <nav aria-label="Primary">
-        <ul>
-          <li><a href="/peoria-chimney-sweep-poc/">Home</a></li>
+      <div class="container header-inner">
+        <a class="logo" href="/peoria-chimney-sweep-poc/" aria-label="Peoria Chimney Sweep home">
+          <span class="logo-mark" aria-hidden="true">⌂</span>
+          <div>Peoria Chimney Sweep<span>Chimney Cleaning · Peoria, IL</span></div>
+        </a>
+        <div class="header-actions">
+          <a class="btn btn-primary header-call" data-phone-link="text" href="tel:+13095550148">Call Now</a>
+          <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+          <ul>
+            <li><a href="/peoria-chimney-sweep-poc/">Home</a></li>
 <li><a href="/peoria-chimney-sweep-poc/services/chimney-sweep/">Chimney Sweep</a></li>
 <li><a href="/peoria-chimney-sweep-poc/services/chimney-inspection/">Chimney Inspection</a></li>
 <li><a href="/peoria-chimney-sweep-poc/services/chimney-repair/">Chimney Repair</a></li>
@@ -43,13 +49,13 @@
 <li><a href="/peoria-chimney-sweep-poc/areas/">Service Areas</a></li>
 <li><a href="/peoria-chimney-sweep-poc/blog/">Blog</a></li>
 <li><a href="/peoria-chimney-sweep-poc/contact/">Contact</a></li>
-          <li><a class="btn btn-primary" data-phone-link="text" href="tel:+13095550148">Call Now</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main>
-    
+            <li class="nav-call-item"><a class="btn btn-primary" data-phone-link="text" href="tel:+13095550148">Call Now</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      
 <section class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="/peoria-chimney-sweep-poc/">Home</a> · About</div>
@@ -72,7 +78,11 @@
   </div>
 </section>
 
-  </main>
+    </main>
+    <div class="mobile-call-bar" role="region" aria-label="Quick call">
+      <a class="btn btn-primary btn-block" data-phone-link href="tel:+13095550148">Call (309) 555-0148</a>
+      <a class="btn btn-secondary btn-block" href="/peoria-chimney-sweep-poc/contact/">Free Callback</a>
+    </div>
   <section class="cta-band">
     <div class="container">
       <h2>Need a chimney sweep in the Peoria area?</h2>

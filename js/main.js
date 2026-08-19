@@ -1,10 +1,10 @@
 /**
- * Peoria Chimney Sweep — form handler + UX helpers
+ * Peoria Chimney Sweep — form handler + mobile nav + UX helpers
  * Phone/email are placeholders until CallRail (or similar) is wired.
  */
 (function () {
   const PHONE_DISPLAY = "(309) 555-0148";
-  const PHONE_TEL = "+13095550148";
+  const PHONE_TEL = "+130****0148";
   const FORM_ENDPOINT = ""; // optional: Formspree / Getform URL
 
   function applyPhoneLinks() {
@@ -19,6 +19,47 @@
   function setYear() {
     document.querySelectorAll("[data-year]").forEach((el) => {
       el.textContent = String(new Date().getFullYear());
+    });
+  }
+
+  function setupMobileNav() {
+    const toggle = document.querySelector(".nav-toggle");
+    const nav = document.getElementById("primary-nav");
+    if (!toggle || !nav) return;
+
+    function closeNav() {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Open menu");
+    }
+
+    function openNav() {
+      nav.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+      toggle.setAttribute("aria-label", "Close menu");
+    }
+
+    toggle.addEventListener("click", () => {
+      if (nav.classList.contains("is-open")) closeNav();
+      else openNav();
+    });
+
+    nav.querySelectorAll("a").forEach((a) => {
+      a.addEventListener("click", closeNav);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeNav();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!nav.classList.contains("is-open")) return;
+      if (nav.contains(e.target) || toggle.contains(e.target)) return;
+      closeNav();
+    });
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 900) closeNav();
     });
   }
 
@@ -96,6 +137,7 @@
   document.addEventListener("DOMContentLoaded", () => {
     applyPhoneLinks();
     setYear();
+    setupMobileNav();
     handleForms();
   });
 })();

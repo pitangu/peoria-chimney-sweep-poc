@@ -411,22 +411,32 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
     </div>
   </div>
   <header class="site-header">
-    <div class="container header-inner">
-      <a class="logo" href="/" aria-label="{BRAND} home">
-        <span class="logo-mark" aria-hidden="true">⌂</span>
-        <div>{BRAND}<span>Chimney Cleaning · Peoria, IL</span></div>
-      </a>
-      <nav aria-label="Primary">
-        <ul>
-          {nav_html}
-          <li><a class="btn btn-primary" data-phone-link="text" href="tel:{PHONE_TEL}">Call Now</a></li>
-        </ul>
-      </nav>
+      <div class="container header-inner">
+        <a class="logo" href="/" aria-label="{BRAND} home">
+          <span class="logo-mark" aria-hidden="true">⌂</span>
+          <div>{BRAND}<span>Chimney Cleaning · Peoria, IL</span></div>
+        </a>
+        <div class="header-actions">
+          <a class="btn btn-primary header-call" data-phone-link="text" href="tel:{PHONE_TEL}">Call Now</a>
+          <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="primary-nav">
+            <span class="nav-toggle-bars" aria-hidden="true"></span>
+          </button>
+        </div>
+        <nav id="primary-nav" class="primary-nav" aria-label="Primary">
+          <ul>
+            {nav_html}
+            <li class="nav-call-item"><a class="btn btn-primary" data-phone-link="text" href="tel:{PHONE_TEL}">Call Now</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      {body}
+    </main>
+    <div class="mobile-call-bar" role="region" aria-label="Quick call">
+      <a class="btn btn-primary btn-block" data-phone-link href="tel:{PHONE_TEL}">Call {PHONE_DISPLAY}</a>
+      <a class="btn btn-secondary btn-block" href="/contact/">Free Callback</a>
     </div>
-  </header>
-  <main>
-    {body}
-  </main>
   <section class="cta-band">
     <div class="container">
       <h2>Need a chimney sweep in the Peoria area?</h2>
