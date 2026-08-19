@@ -1,7 +1,7 @@
 # Next steps — Peoria Chimney Sweep POC
 
-**Live site:** https://pitangu.github.io/peoria-chimney-sweep-poc/  
-**Repo:** https://github.com/pitangu/peoria-chimney-sweep-poc  
+**Live site:** https://pitangu.github.io/peoria-chimney-sweep/  
+**Repo:** https://github.com/pitangu/peoria-chimney-sweep  
 **Local:** `C:\Users\AmirFlax\rank-and-rent-poc\chimney-sweep-peoria`
 
 ## Done

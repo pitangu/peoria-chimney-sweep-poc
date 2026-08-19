@@ -11,8 +11,8 @@ TODAY = date.today().isoformat()
 SITE_NAME = "Peoria Chimney Sweep"
 # Live on GitHub Pages until custom domain is connected.
 # Custom domain candidate: https://chimneysweeppeoriail.com
-DOMAIN = "https://pitangu.github.io/peoria-chimney-sweep-poc"
-BASE = "/peoria-chimney-sweep-poc"  # "" if hosting at domain root
+DOMAIN = "https://pitangu.github.io/peoria-chimney-sweep"
+BASE = "/peoria-chimney-sweep"  # "" if hosting at domain root
 PHONE_DISPLAY = "(309) 555-0148"
 PHONE_TEL = "+130****0148"
 BRAND = "Peoria Chimney Sweep"
