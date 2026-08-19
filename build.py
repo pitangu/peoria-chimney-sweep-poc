@@ -661,7 +661,6 @@ def build_home() -> None:
     )
     cards = "\n".join(
         f"""<article class="card">
-          <div class="icon-badge">{s['icon']}</div>
           <h3>{s['name']}</h3>
           <p>{s['summary']}</p>
           <a class="more" href="/services/{s['slug']}/">Learn more</a>
