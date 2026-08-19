@@ -14,7 +14,7 @@
   --radius: 12px;
   --max: 1120px;
   /* Side breathing room: scales up on wide screens */
-  --gutter: clamp(1.5rem, 6vw, 3.5rem);
+  --gutter: clamp(1.75rem, 7vw, 4.5rem);
   --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -229,7 +229,6 @@ a:hover { text-decoration: underline; }
 .hero-grid {
   position: relative;
   z-index: 1;
-  width: 100%;
   display: grid;
   grid-template-columns: 1.35fr 0.9fr;
   gap: 2rem;
@@ -662,7 +661,7 @@ ol.process-list li { padding-left: 0.25rem; }
 
 @media (max-width: 900px) {
   :root {
-    --gutter: clamp(1.25rem, 5.5vw, 2rem);
+    --gutter: clamp(1.35rem, 6vw, 2.25rem);
   }
   .hero {
     min-height: auto;

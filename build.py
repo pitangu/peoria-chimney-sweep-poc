@@ -639,7 +639,7 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
   <meta name="twitter:title" content="{title}">
   <meta name="twitter:description" content="{meta}">
   <meta name="twitter:image" content="{OG_IMAGE}">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/styles.css?v=20260819b">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   {extra_head}
 </head>
@@ -925,7 +925,8 @@ def build_home() -> None:
         <img class="hero-bg-img" src="/images/hero-service-van.jpg" width="1672" height="941" alt="" loading="eager" decoding="async" fetchpriority="high">
         <div class="hero-overlay"></div>
       </div>
-      <div class="container hero-grid">
+      <div class="container">
+      <div class="hero-grid">
         <div class="hero-copy">
           <span class="eyebrow">Serving the Peoria area</span>
           <h1>Chimney Sweep in Peoria, IL</h1>
@@ -951,6 +952,7 @@ def build_home() -> None:
           <p class="sub">Leave your number. We usually call back the same business day.</p>
           {lead_form(compact=True)}
         </div>
+      </div>
       </div>
     </section>
 
