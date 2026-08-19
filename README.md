@@ -1,4 +1,4 @@
-# Peoria Chimney Sweep  -  Rank & Rent POC
+# Peoria Chimney Sweep - Rank & Rent POC
 
 **Niche:** Chimney sweep / chimney cleaning  
 **Market:** Peoria, IL metro (East Peoria, Pekin, Washington, Morton, …)  
@@ -20,7 +20,7 @@
 - Static HTML/CSS/JS (fast, crawlable, cheap hosting)
 - Schema.org LocalBusiness + Service + FAQ + BlogPosting
 - Lead form (mailto/localStorage fallback; wire Formspree/CallRail next)
-- Phone placeholder: `(309) 555-0148`  -  replace with CallRail/Twilio tracking number
+- Phone placeholder: `(309) 555-0148` - replace with CallRail/Twilio tracking number
 
 ## Publish
 GitHub Pages (project or user site) or Cloudflare Pages/Netlify.
@@ -31,7 +31,7 @@ Custom domain candidate: `chimneysweeppeoriail.com` (confirm availability before
 2. Google Search Console verify + submit sitemap
 3. Replace phone with tracking number + call recording
 4. Wire form to email/CRM
-5. Citations: GBP (if eligible), Apple Business Connect, Bing Places, Yelp, BBB, Angi  -  NAP consistent
+5. Citations: GBP (if eligible), Apple Business Connect, Bing Places, Yelp, BBB, Angi - NAP consistent
 6. 5-15 local backlinks / sponsorships / chamber / home-services directories over time
 7. Monthly content + seasonal posts (pre-winter)
 

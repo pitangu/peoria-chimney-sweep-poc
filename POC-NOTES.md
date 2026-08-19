@@ -1,4 +1,4 @@
-# POC selection notes  -  2026-08-19
+# POC selection notes - 2026-08-19
 
 ## Chosen: Chimney Sweep · Peoria, IL
 
@@ -14,7 +14,7 @@ Opportunity is **not** zero-competition, but competitors are beatable with a foc
 | Pair | Signal |
 |------|--------|
 | Dryer vent Fort Wayne | Dedicated local sites already ranking (Vickie's, Old Smokey's) |
-| Stump grinding Peoria | Facebook page in top results  -  weak web presence, good secondary niche |
+| Stump grinding Peoria | Facebook page in top results - weak web presence, good secondary niche |
 | Power washing Peoria/Eugene | Several dedicated local sites |
 | Crawl space Peoria | Franchise/national players strong |
 
