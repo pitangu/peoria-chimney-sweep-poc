@@ -981,7 +981,6 @@ def build_home() -> None:
   <div class="container">
     <div class="section-head">
       <h2>What we handle</h2>
-      <p>Not six identical boxes. The jobs people actually call about.</p>
     </div>
     <div class="grid-2 home-service-grid">{home_cards}</div>
     <p style="margin-top:1.25rem"><a href="/services/">See all services</a></p>
@@ -993,7 +992,6 @@ def build_home() -> None:
     <div>
       <div class="section-head">
         <h2>How it works</h2>
-        <p>Three simple steps.</p>
       </div>
       <div class="steps">
         <div class="step"><div class="step-num">1</div><div><h3>Call or send the form</h3><p>Tell us your town, wood, gas, or pellet, and the problem (smoke, smell, yearly cleaning, home sale, and so on).</p></div></div>
