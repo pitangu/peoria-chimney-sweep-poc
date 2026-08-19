@@ -9,10 +9,10 @@ from datetime import date
 ROOT = Path(__file__).resolve().parent
 TODAY = date.today().isoformat()
 SITE_NAME = "Peoria Chimney Sweep"
-# Live on GitHub Pages until custom domain is connected.
-# Custom domain candidate: https://chimneysweeppeoriail.com
-DOMAIN = "https://pitangu.github.io/peoria-chimney-sweep"
-BASE = "/peoria-chimney-sweep"  # "" if hosting at domain root
+# Custom domain on GitHub Pages. github.io path still works as a fallback
+# until DNS for chimneysweeppeoriail.com is pointed at Pages.
+DOMAIN = "https://chimneysweeppeoriail.com"
+BASE = ""  # "" at domain root; "/repo-name" only for project Pages path hosting
 PHONE_DISPLAY = "(309) 555-0148"
 PHONE_TEL = "+130****0148"
 BRAND = "Peoria Chimney Sweep"

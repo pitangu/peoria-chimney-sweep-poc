@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pitangu.github.io/peoria-chimney-sweep/sitemap.xml
+Sitemap: https://chimneysweeppeoriail.com/sitemap.xml

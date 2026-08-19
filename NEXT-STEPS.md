@@ -1,6 +1,7 @@
 # Next steps — Peoria Chimney Sweep POC
 
-**Live site:** https://pitangu.github.io/peoria-chimney-sweep/  
+**Live site:** https://chimneysweeppeoriail.com/ (DNS must point at GitHub Pages)  
+**Staging fallback:** https://pitangu.github.io/peoria-chimney-sweep/  
 **Repo:** https://github.com/pitangu/peoria-chimney-sweep  
 **Local:** `C:\Users\AmirFlax\rank-and-rent-poc\chimney-sweep-peoria`
 
@@ -9,10 +10,13 @@
 - [x] Full static site with services, cities, blog, schema, sitemap
 - [x] Published on GitHub Pages
 - [x] Mobile-friendly: hamburger nav + sticky Call/Callback bar
+- [x] Domain registered: `chimneysweeppeoriail.com` (GoDaddy)
+- [x] Site rebuilt for domain root (`BASE=""`, `DOMAIN=https://chimneysweeppeoriail.com`)
+- [x] GitHub Pages custom domain + `CNAME` file set
 
 ## Do this week (ranking requires off-page too)
-1. **Buy domain** (candidate: `chimneysweeppeoriail.com` — re-check registrar)
-2. Point DNS → GitHub Pages (or Cloudflare Pages) and set `BASE = ""` + `DOMAIN` in `build.py`, rebuild, push
+1. **Point GoDaddy DNS at GitHub Pages** (you have to click this — see ISSUES.md)
+2. After DNS is green, turn on **Enforce HTTPS** in GitHub Pages if it is not already on
 3. **CallRail/Twilio** tracking number → replace `(309) 555-0148` in `build.py` + `js/main.js`
 4. Wire form to Formspree/Getform/email (set `FORM_ENDPOINT` in `js/main.js`)
 5. **Google Search Console** → verify property → submit `sitemap.xml`

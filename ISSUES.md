@@ -40,14 +40,32 @@ genuinely local content (housing stock age, masonry/weather specifics,
 
 Amir's framing: github.io = staging. These fire when the real domain goes live.
 
+- [x] Domain purchased: `chimneysweeppeoriail.com` (GoDaddy, 2026-08-19)
+- [x] Set BASE="" and DOMAIN=https://chimneysweeppeoriail.com in build.py,
+      rebuild, CNAME file + GitHub Pages custom domain
+- [ ] **You (GoDaddy DNS):** point the domain at GitHub Pages
+      1. GoDaddy → Domain → chimneysweeppeoriail.com → DNS
+      2. Delete parking / forwarding A records (currently 76.223.105.230
+         and 13.248.243.5)
+      3. Apex A records (host `@`):
+         - 185.199.108.153
+         - 185.199.109.153
+         - 185.199.110.153
+         - 185.199.111.153
+      4. Optional IPv6 AAAA (host `@`):
+         - 2606:50c0:8000::153
+         - 2606:50c0:8001::153
+         - 2606:50c0:8002::153
+         - 2606:50c0:8003::153
+      5. CNAME `www` → `pitangu.github.io`
+      6. Save. Wait 5–30 minutes. Then open https://chimneysweeppeoriail.com/
+      7. GitHub repo → Settings → Pages → Enforce HTTPS (once the lock is available)
 - [ ] Analytics: install GA4 (or chosen tool) in build.py, rebuild, push,
       then VERIFY hits appear in the dashboard. Data only counts forward.
 - [ ] Form wiring: set FORM_ENDPOINT in js/main.js (Formspree/Getform) and
       replace the guessed backup address `leads@chimneysweeppeoriail.com`
       in js/main.js with a real address on the purchased domain (or Gmail).
       Grep the whole repo for the old guessed domain.
-- [ ] Set BASE="" and DOMAIN in build.py, rebuild, verify canonical/sitemap
-      hosts match new domain.
 - [ ] Replace placeholder phone (309) 555-0148 with tracking number in
       build.py + js/main.js.
 - [ ] Google Search Console: verify property, submit sitemap.
@@ -56,4 +74,4 @@ Amir's framing: github.io = staging. These fire when the real domain goes live.
 - Form endpoint now (folded into publish-day)
 - CallRail/phone now (folded into publish-day)
 - GSC now (folded into publish-day)
-- Domain purchase timing
+- Domain purchase timing (done 2026-08-19)
