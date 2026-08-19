@@ -14,7 +14,7 @@
   --radius: 12px;
   --max: 1120px;
   /* Side breathing room: scales up on wide screens */
-  --gutter: clamp(1.25rem, 5vw, 2.75rem);
+  --gutter: clamp(1.5rem, 6vw, 3.5rem);
   --font: "Segoe UI", system-ui, -apple-system, Roboto, Helvetica, Arial, sans-serif;
 }
 
@@ -31,9 +31,9 @@ img { max-width: 100%; height: auto; display: block; }
 a { color: var(--brick); text-decoration: none; }
 a:hover { text-decoration: underline; }
 .container {
-  width: min(100% - (var(--gutter) * 2), var(--max));
+  width: min(100%, var(--max));
   margin-inline: auto;
-  padding-inline: 0;
+  padding-inline: var(--gutter);
 }
 
 /* Top bar */
@@ -202,10 +202,6 @@ a:hover { text-decoration: underline; }
   overflow: hidden;
   background: var(--navy-dark);
 }
-.hero .container {
-  /* Keep hero copy/form off the viewport edges on large screens */
-  width: min(100% - (var(--gutter) * 2), var(--max));
-}
 .hero-media {
   position: absolute;
   inset: 0;
@@ -225,13 +221,15 @@ a:hover { text-decoration: underline; }
     linear-gradient(105deg, rgba(15, 24, 41, 0.88) 0%, rgba(15, 24, 41, 0.72) 42%, rgba(15, 24, 41, 0.42) 70%, rgba(26, 39, 68, 0.28) 100%),
     linear-gradient(0deg, rgba(15, 24, 41, 0.55) 0%, transparent 42%);
 }
-.hero .container,
+/* Container keeps side gutters; do NOT force width:100% here (that cancelled padding). */
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
 .hero-grid {
   position: relative;
   z-index: 1;
   width: 100%;
-}
-.hero-grid {
   display: grid;
   grid-template-columns: 1.35fr 0.9fr;
   gap: 2rem;
@@ -664,7 +662,7 @@ ol.process-list li { padding-left: 0.25rem; }
 
 @media (max-width: 900px) {
   :root {
-    --gutter: clamp(1.1rem, 5.5vw, 1.75rem);
+    --gutter: clamp(1.25rem, 5.5vw, 2rem);
   }
   .hero {
     min-height: auto;
