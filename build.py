@@ -570,10 +570,11 @@ def lead_form(compact: bool = False) -> str:
   </div>
   {msg_rows}
   <button class="btn btn-primary btn-block" type="submit">Request a Callback</button>
-  <p class="form-note">Prefer to talk now? <a data-phone-link="text" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> · No obligation</p>
-  <p class="form-note" data-form-status role="status" aria-live="polite"></p>
-</form>
-"""
+    <p class="form-note">Prefer to talk now? <a data-phone-link="text" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> · No obligation</p>
+    <p class="form-note">By submitting, you agree to be contacted by a local chimney professional about your request.</p>
+    <p class="form-note" data-form-status role="status" aria-live="polite"></p>
+  </form>
+  """
 
 
 def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> str:
@@ -726,9 +727,12 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
       </div>
     </div>
     <div class="container footer-bottom">
-      <span>© <span data-year></span> {BRAND}. All rights reserved.</span>
-      <span>Peoria, Illinois</span>
-    </div>
+          <p class="footer-disclosure">This site connects homeowners with local chimney professionals serving the Peoria area. Calls and form submissions are shared with licensed service providers who will contact you directly.</p>
+          <div class="footer-legal">
+            <span>© <span data-year></span> {BRAND}. All rights reserved.</span>
+            <span>Peoria, Illinois</span>
+          </div>
+        </div>
   </footer>
   <script src="/js/main.js" defer></script>
 </body>
