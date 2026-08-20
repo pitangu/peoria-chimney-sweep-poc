@@ -6,6 +6,10 @@
   const PHONE_DISPLAY = "(309) 555-0148";
   const PHONE_TEL = "+130****0148";
   const FORM_ENDPOINT = ""; // optional: Formspree / Getform URL
+  // Snapshot of consent wording shown on the form at submission time.
+  // Keep in sync with the visible checkbox label in build.py lead_form().
+  const CONSENT_TEXT =
+    "I agree to be contacted by a local chimney professional about my request by phone, text, or email, including via automated technology. Consent is not a condition of purchase. Message and data rates may apply. See our Privacy Policy and Terms of Service.";
 
   function applyPhoneLinks() {
     document.querySelectorAll("[data-phone-link]").forEach((el) => {
@@ -63,8 +67,63 @@
     });
   }
 
+  function isoWithOffset(d) {
+    const pad = (n) => String(n).padStart(2, "0");
+    const tzo = -d.getTimezoneOffset();
+    const sign = tzo >= 0 ? "+" : "-";
+    const abs = Math.abs(tzo);
+    const hh = pad(Math.floor(abs / 60));
+    const mm = pad(abs % 60);
+    return (
+      d.getFullYear() +
+      "-" +
+      pad(d.getMonth() + 1) +
+      "-" +
+      pad(d.getDate()) +
+      "T" +
+      pad(d.getHours()) +
+      ":" +
+      pad(d.getMinutes()) +
+      ":" +
+      pad(d.getSeconds()) +
+      sign +
+      hh +
+      ":" +
+      mm
+    );
+  }
+
+  async function lookupSubmitterIp() {
+    try {
+      const ctrl = typeof AbortController !== "undefined" ? new AbortController() : null;
+      const timer = ctrl ? setTimeout(() => ctrl.abort(), 2500) : null;
+      const res = await fetch("https://api.ipify.org?format=json", {
+        signal: ctrl ? ctrl.signal : undefined,
+      });
+      if (timer) clearTimeout(timer);
+      if (!res.ok) return "unavailable";
+      const j = await res.json();
+      return j && j.ip ? String(j.ip) : "unavailable";
+    } catch (_) {
+      return "unavailable";
+    }
+  }
+
   function handleForms() {
     document.querySelectorAll("form[data-lead-form]").forEach((form) => {
+      const consentInput = form.querySelector('input[name="consent"]');
+      const consentError = form.querySelector("[data-consent-error]");
+
+      if (consentInput) {
+        // Never restore or auto-check consent.
+        consentInput.checked = false;
+        consentInput.addEventListener("change", () => {
+          if (consentInput.checked && consentError) {
+            consentError.hidden = true;
+          }
+        });
+      }
+
       form.addEventListener("submit", async (e) => {
         e.preventDefault();
         const status = form.querySelector("[data-form-status]");
@@ -75,6 +134,7 @@
         if (data.company_website) {
           if (status) status.textContent = "Thanks — we'll be in touch shortly.";
           form.reset();
+          if (consentInput) consentInput.checked = false;
           return;
         }
 
@@ -83,15 +143,41 @@
           return;
         }
 
+        if (!consentInput || !consentInput.checked) {
+          if (consentError) {
+            consentError.hidden = false;
+            consentError.focus && consentError.focus();
+          }
+          if (status) status.textContent = "";
+          if (consentInput) consentInput.focus();
+          return;
+        }
+        if (consentError) consentError.hidden = true;
+
         if (btn) btn.disabled = true;
         if (status) status.textContent = "Sending…";
+
+        const consent_timestamp = isoWithOffset(new Date());
+        const consent_page_url = window.location.href;
+        const consent_text = CONSENT_TEXT;
+        const consent_user_agent = navigator.userAgent || "";
+        const consent_ip = await lookupSubmitterIp();
+
+        const payload = {
+          ...data,
+          consent_timestamp,
+          consent_ip,
+          consent_page_url,
+          consent_text,
+          consent_user_agent,
+        };
 
         try {
           if (FORM_ENDPOINT) {
             const res = await fetch(FORM_ENDPOINT, {
               method: "POST",
               headers: { "Content-Type": "application/json", Accept: "application/json" },
-              body: JSON.stringify(data),
+              body: JSON.stringify(payload),
             });
             if (!res.ok) throw new Error("bad status");
           } else {
@@ -105,13 +191,32 @@
                 "City/ZIP: " + (data.city || ""),
                 "Service: " + (data.service || ""),
                 "Message: " + (data.message || ""),
+                "",
+                "Consent timestamp: " + consent_timestamp,
+                "Consent IP: " + consent_ip,
+                "Consent page URL: " + consent_page_url,
+                "Consent text: " + consent_text,
+                "Consent user agent: " + consent_user_agent,
               ].join("\n")
             );
-            // Store locally for operator follow-up
+            // Store locally for operator follow-up (includes immutable consent snapshot)
             try {
               const key = "pcs_leads";
               const prev = JSON.parse(localStorage.getItem(key) || "[]");
-              prev.push({ ...data, ts: new Date().toISOString() });
+              prev.push({
+                name: data.name,
+                phone: data.phone,
+                email: data.email || "",
+                city: data.city || "",
+                service: data.service || "",
+                message: data.message || "",
+                consent_timestamp,
+                consent_ip,
+                consent_page_url,
+                consent_text,
+                consent_user_agent,
+                ts: new Date().toISOString(),
+              });
               localStorage.setItem(key, JSON.stringify(prev));
             } catch (_) {}
             window.location.href =
@@ -122,6 +227,7 @@
               "Thanks! If your email app opened, hit send. Or call " + PHONE_DISPLAY + " now.";
           }
           form.reset();
+          if (consentInput) consentInput.checked = false;
         } catch (err) {
           if (status) {
             status.textContent =

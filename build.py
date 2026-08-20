@@ -569,6 +569,13 @@ def lead_form(compact: bool = False) -> str:
     </div>
   </div>
   {msg_rows}
+  <div class="form-consent">
+    <label class="consent-label">
+      <input type="checkbox" name="consent" value="yes" required>
+      <span>I agree to be contacted by a local chimney professional about my request by phone, text, or email, including via automated technology. Consent is not a condition of purchase. Message and data rates may apply. See our <a href="/privacy/" target="_blank" rel="noopener">Privacy Policy</a> and <a href="/terms/" target="_blank" rel="noopener">Terms of Service</a>.</span>
+    </label>
+    <p class="consent-error" data-consent-error hidden>Please agree to be contacted so we can return your call.</p>
+  </div>
   <button class="btn btn-primary btn-block" type="submit">Request a Callback</button>
     <p class="form-note">Prefer to talk now? <a data-phone-link="text" href="tel:{PHONE_TEL}">{PHONE_DISPLAY}</a> · No obligation</p>
     <p class="form-note">By submitting, you agree to be contacted by a local chimney professional about your request.</p>
@@ -577,7 +584,7 @@ def lead_form(compact: bool = False) -> str:
   """
 
 
-def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> str:
+def base(title: str, meta: str, path: str, body: str, extra_head: str = "", robots: str = "index,follow") -> str:
     canonical = DOMAIN.rstrip("/") + (path if path != "/" else "/")
 
     def fix(html: str) -> str:
@@ -626,7 +633,7 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
   <title>{title}</title>
   <meta name="description" content="{meta}">
   <link rel="canonical" href="{canonical}">
-  <meta name="robots" content="index,follow">
+  <meta name="robots" content="{robots}">
   <meta name="geo.region" content="{GEO_REGION}">
   <meta name="geo.placename" content="Peoria">
   <meta name="ICBM" content="{LAT}, {LNG}">
@@ -640,7 +647,7 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
   <meta name="twitter:title" content="{title}">
   <meta name="twitter:description" content="{meta}">
   <meta name="twitter:image" content="{OG_IMAGE}">
-  <link rel="stylesheet" href="/css/styles.css?v=20260819b">
+  <link rel="stylesheet" href="/css/styles.css?v=20260820a">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta name="google-site-verification" content="_dAF_VWUbVx4oglhNYuZq197uV76lkQ0j6VFS8Ml4dg">
   <!-- Google tag (gtag.js) -->
@@ -722,6 +729,7 @@ def base(title: str, meta: str, path: str, body: str, extra_head: str = "") -> s
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/contact/">Contact</a></li>
           <li><a href="/privacy/">Privacy</a></li>
+          <li><a href="/terms/">Terms of Service</a></li>
           <li><a href="/sitemap.xml">Sitemap</a></li>
         </ul>
       </div>
@@ -1424,6 +1432,91 @@ def build_static_pages() -> None:
             "Privacy policy for Peoria Chimney Sweep contact forms and calls.",
             "/privacy/",
             privacy_body,
+        ),
+    )
+
+    terms_body = """
+<section class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="/">Home</a> · Terms of Service</div>
+    <h1>Terms of Service</h1>
+  </div>
+</section>
+<section>
+  <div class="container prose" style="max-width:48rem">
+
+    <p><strong>Effective Date:</strong> [DATE]</p>
+    <p>Please read these Terms of Service ("Terms") carefully before using chimneysweeppeoriail.com (the "Site"). The Site is operated by [LEGAL ENTITY NAME] ("we," "us," or "our"). By accessing or using the Site, you agree to be bound by these Terms. If you do not agree, please do not use the Site.</p>
+
+    <h2>1. What This Site Is</h2>
+    <p>The Site is a lead referral service. We are not a chimney sweep, chimney service company, or contractor, and we do not perform chimney cleaning, inspection, repair, installation, dryer vent service, or any other service described on the Site.</p>
+    <p>When you call the phone number listed on the Site or submit a form, your contact information and request details are shared with one or more independent local service providers who may contact you directly. Any service you receive is provided solely by that independent provider under a separate agreement between you and them. We are not a party to that agreement.</p>
+
+    <h2>2. No Endorsement or Guarantee of Providers</h2>
+    <p>We do not employ, control, supervise, or direct the service providers who receive your information. We make no representation or warranty regarding any provider's licensing, insurance, certification, qualifications, workmanship, pricing, scheduling, conduct, or the outcome of any work performed.</p>
+    <p>You are solely responsible for evaluating any provider before engaging them, including verifying licensing and insurance, obtaining written estimates, and confirming that the provider meets your requirements. We encourage you to do so.</p>
+
+    <h2>3. Contact Consent</h2>
+    <p>By submitting a form on the Site or calling the number listed, you consent to be contacted by one or more local service providers regarding your request, by telephone, text message, or email, including through automated dialing or prerecorded messaging technology. Consent is not a condition of any purchase.</p>
+    <p>Message and data rates may apply. You may revoke consent at any time by replying STOP to any text message, by telling a caller not to contact you again, or by emailing [EMAIL ADDRESS]. Revoking consent may prevent us from connecting you with a provider.</p>
+
+    <h2>4. Call Recording and Tracking</h2>
+    <p>Telephone calls placed to numbers listed on the Site may be routed through a call tracking service and may be monitored or recorded for quality assurance, service delivery, and record-keeping purposes. Where recording occurs, you will be notified at the start of the call. If you do not consent to recording, do not proceed with the call. Our handling of recordings and call data is described in our Privacy Policy.</p>
+
+    <h2>5. Informational Content Only</h2>
+    <p>Content on the Site, including service descriptions, frequently asked questions, cost ranges, safety information, blog articles, and references to industry standards, is provided for general informational purposes only. It is not professional advice and should not be relied upon as a substitute for inspection or assessment by a qualified professional.</p>
+    <p>Any pricing information is a general estimate only. Actual pricing is set by the service provider and depends on factors we do not control. Nothing on the Site constitutes a quote, offer, or binding price.</p>
+    <p>Chimney and venting systems involve fire and carbon monoxide risks. If you suspect an active chimney fire, a gas leak, or carbon monoxide exposure, leave the building and call 911 or your gas utility immediately. Do not rely on the Site in an emergency.</p>
+
+    <h2>6. Accuracy of Information You Provide</h2>
+    <p>You agree that information you submit is accurate and that you are submitting it on your own behalf or with authorization, and that you are at least 18 years of age. You agree not to submit false, misleading, or third-party contact information without consent.</p>
+
+    <h2>7. Acceptable Use</h2>
+    <p>You agree not to use the Site to submit fraudulent inquiries; scrape, harvest, or automatically collect content or data; interfere with or attempt to gain unauthorized access to the Site or its systems; reproduce or republish Site content without permission; or use the Site for any unlawful purpose.</p>
+
+    <h2>8. Intellectual Property</h2>
+    <p>All content on the Site, including text, layout, graphics, and images, is owned by us or our licensors and is protected by applicable intellectual property laws. You may view and print pages for personal, non-commercial use only.</p>
+
+    <h2>9. Third-Party Links</h2>
+    <p>The Site may contain links to third-party websites. We do not control and are not responsible for the content, policies, or practices of those sites. Links do not constitute endorsement.</p>
+
+    <h2>10. Disclaimer of Warranties</h2>
+    <p class="terms-caps">THE SITE IS PROVIDED "AS IS" AND "AS AVAILABLE," WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SITE WILL BE UNINTERRUPTED, ERROR-FREE, OR SECURE, THAT ANY REQUEST WILL RESULT IN CONTACT FROM A PROVIDER, OR THAT ANY INFORMATION ON THE SITE IS COMPLETE OR CURRENT.</p>
+
+    <h2>11. Limitation of Liability</h2>
+    <p class="terms-caps">TO THE FULLEST EXTENT PERMITTED BY LAW, WE WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA, OR GOODWILL, ARISING OUT OF OR RELATING TO YOUR USE OF THE SITE OR ANY INTERACTION WITH OR SERVICES PERFORMED BY ANY SERVICE PROVIDER, WHETHER BASED IN CONTRACT, TORT, STRICT LIABILITY, OR OTHERWISE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+    <p class="terms-caps">TO THE FULLEST EXTENT PERMITTED BY LAW, OUR TOTAL AGGREGATE LIABILITY ARISING OUT OF OR RELATING TO THESE TERMS OR THE SITE WILL NOT EXCEED ONE HUNDRED U.S. DOLLARS ($100).</p>
+    <p>Some jurisdictions do not allow certain limitations of liability, so some of the above may not apply to you. Nothing in these Terms limits liability that cannot be limited under applicable law.</p>
+
+    <h2>12. Indemnification</h2>
+    <p>You agree to indemnify and hold harmless [LEGAL ENTITY NAME] and its officers, members, and agents from any claims, damages, losses, liabilities, and expenses, including reasonable attorneys' fees, arising out of your use of the Site, your violation of these Terms, or your interactions with any service provider.</p>
+
+    <h2>13. Changes to These Terms</h2>
+    <p>We may modify these Terms at any time. Changes take effect when posted, and the Effective Date above will be updated. Your continued use of the Site after changes are posted constitutes acceptance.</p>
+
+    <h2>14. Governing Law</h2>
+    <p>These Terms are governed by the laws of the State of Illinois, without regard to conflict of law principles. Any dispute arising out of or relating to these Terms or the Site will be brought exclusively in the state or federal courts located in [COUNTY] County, Illinois, and you consent to the jurisdiction of those courts.</p>
+
+    <h2>15. Severability</h2>
+    <p>If any provision of these Terms is held unenforceable, that provision will be limited or severed to the minimum extent necessary, and the remaining provisions will remain in full force and effect.</p>
+
+    <h2>16. Contact</h2>
+    <p>Questions about these Terms may be directed to:</p>
+    <p>[LEGAL ENTITY NAME]<br>
+    [EMAIL ADDRESS]<br>
+    [MAILING ADDRESS]</p>
+
+  </div>
+</section>
+"""
+    write(
+        "terms/index.html",
+        base(
+            "Terms of Service | Peoria Chimney Sweep",
+            "Terms of Service for chimneysweeppeoriail.com lead referral site.",
+            "/terms/",
+            terms_body,
+            robots="noindex,follow",
         ),
     )
 
