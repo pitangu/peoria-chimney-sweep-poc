@@ -60,8 +60,8 @@ Amir's framing: github.io = staging. These fire when the real domain goes live.
       5. CNAME `www` → `pitangu.github.io`
       6. Save. Wait 5–30 minutes. Then open https://chimneysweeppeoriail.com/
       7. GitHub repo → Settings → Pages → Enforce HTTPS (once the lock is available)
-- [ ] Analytics: install GA4 (or chosen tool) in build.py, rebuild, push,
-      then VERIFY hits appear in the dashboard. Data only counts forward.
+- [x] Analytics: installed GA4 (gtag.js G-FM1TX0K0KD) across all pages in build.py,
+      rebuilt, pushed and verified live. Data now tracks forward.
 - [ ] Form wiring: set FORM_ENDPOINT in js/main.js (Formspree/Getform) and
       replace the guessed backup address `leads@chimneysweeppeoriail.com`
       in js/main.js with a real address on the purchased domain (or Gmail).
